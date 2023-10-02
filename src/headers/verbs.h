@@ -6,7 +6,7 @@ class Verbs
 {
   public:
   Verbs();
-  Verbs(std::string onePP, std::string twoPP); //for now
+  Verbs(std::string onePP, std::string twoPP, std::string threePP); //for now
   void PrintVerbs();
   
   private:
@@ -17,11 +17,18 @@ class Verbs
     std::string secPPend;
     std::string thirdPP;
     std::string fourthPP;
-    std::string stem; 
+    std::string stem;
+    std::string stem3PP;
     std::vector<std::string> presentTense;
+    std::vector<std::string> futureTense;
+    std::vector<std::string> imperfectTense;
+    std::vector<std::string> perfectTense;
 
     //Private Methods
     void PresentTense();
+    void FutureTense();
+    void ImperfectTense();
+    void PerfectTense();
 
 };
 

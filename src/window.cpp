@@ -64,6 +64,9 @@ void ncursesWINDOW()
 				form_driver(my_form, REQ_PREV_FIELD);
 				form_driver(my_form, REQ_END_LINE);
 				break;
+      case 9://omegalol tbh
+        form_driver(my_form, REQ_NEXT_FIELD);
+        break;
 			default:
 				/* If this is a normal character, it gets */
 				/* Printed				  */	

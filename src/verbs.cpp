@@ -60,6 +60,7 @@ Verbs::Verbs(std::string onePP, std::string twoPP, std::string threePP)
   PerfectTense();
   PluperfectTense();
   FutureperfectTense();
+  PresentpassiveTense();
 }
 
 void::Verbs::PresentTense()
@@ -399,6 +400,62 @@ void Verbs::FutureperfectTense()
   }
 }
 
+void Verbs::PresentpassiveTense()
+{
+
+  std::string endings1[6] = { "or", "aris", "atur", "amur", "amini", "antur"};
+  std::string endings2[6] = { "eor", "eris", "etur", "emur", "emini", "entur"};
+  std::string endings3[6] = { "or", "eris", "itur", "imur", "imini", "untur"};
+  std::string endings4[6] = { "ior", "iris", "itur", "imur", "imini", "iuntur"};
+  //push back 
+  switch (conjugation)
+  {
+    case 1:
+      {
+        presentpassiveTense.push_back(stem + endings1[0]);
+        presentpassiveTense.push_back(stem + endings1[1]);
+        presentpassiveTense.push_back(stem + endings1[2]);
+        presentpassiveTense.push_back(stem + endings1[3]);
+        presentpassiveTense.push_back(stem + endings1[4]);
+        presentpassiveTense.push_back(stem + endings1[5]);
+      }
+      break;
+    case 2:
+      {
+        presentpassiveTense.push_back(stem + endings2[0]);
+        presentpassiveTense.push_back(stem + endings2[1]);
+        presentpassiveTense.push_back(stem + endings2[2]);
+        presentpassiveTense.push_back(stem + endings2[3]);
+        presentpassiveTense.push_back(stem + endings2[4]);
+        presentpassiveTense.push_back(stem + endings2[5]);
+      }
+      break;
+    case 3:
+      {
+        presentpassiveTense.push_back(stem + endings3[0]);
+        presentpassiveTense.push_back(stem + endings3[1]);
+        presentpassiveTense.push_back(stem + endings3[2]);
+        presentpassiveTense.push_back(stem + endings3[3]);
+        presentpassiveTense.push_back(stem + endings3[4]);
+        presentpassiveTense.push_back(stem + endings3[5]);
+      }
+      break;
+    case 4:
+      {
+        presentpassiveTense.push_back(stem + endings4[0]);
+        presentpassiveTense.push_back(stem + endings4[1]);
+        presentpassiveTense.push_back(stem + endings4[2]);
+        presentpassiveTense.push_back(stem + endings4[3]);
+        presentpassiveTense.push_back(stem + endings4[4]);
+        presentpassiveTense.push_back(stem + endings4[5]);
+      }
+      break;
+    default:
+      presentpassiveTense.push_back("0");
+      break;
+  }
+}
+
 void Verbs::PrintVerbs()
 {
   std::cout << "Principle Parts 1: " << firstPP << " 2: " << secondPP << " 3: " << thirdPP << "\n";
@@ -427,6 +484,10 @@ void Verbs::PrintVerbs()
   }
   std::cout << "\nFuture-Perfect Tense is \n";
   for (const auto& element : futureperfectTense) {
+    std::cout << element << " ";
+  }
+  std::cout << "\nPresent Passive Tense is \n";
+  for (const auto& element : presentpassiveTense) {
     std::cout << element << " ";
   }
   std::cout << "\n" << std::endl;

@@ -25,6 +25,7 @@ class Verbs
     std::vector<std::string> perfectTense;
     std::vector<std::string> pluperfectTense;
     std::vector<std::string> futureperfectTense;
+    std::vector<std::string> presentpassiveTense;
 
     //Private Methods
     void PresentTense();
@@ -33,7 +34,6 @@ class Verbs
     void PerfectTense();
     void PluperfectTense();
     void FutureperfectTense();
+    void PresentpassiveTense();
 
 };
-
-

@@ -58,6 +58,8 @@ Verbs::Verbs(std::string onePP, std::string twoPP, std::string threePP)
   FutureTense();
   ImperfectTense();
   PerfectTense();
+  PluperfectTense();
+  FutureperfectTense();
 }
 
 void::Verbs::PresentTense()
@@ -285,61 +287,117 @@ void Verbs::PerfectTense()
 }
 
 
-/*void Verbs::PerfectTense()
+void Verbs::PluperfectTense()
 {
 
-  std::string endings1[6] = { "abam", "abas", "abat", "abamus", "abatis", "abant"};
-  std::string endings2[6] = { "ebam", "ebas", "ebat", "ebamus", "ebatis", "ebant"};
-  std::string endings3[6] = { "ebam", "ebas", "ebat", "ebamus", "ebatis", "abant"};
-  std::string endings4[6] = { "iebam", "iebas", "iebat", "iebamus", "iebatis", "iebant"};
+  std::string endings1[6] = { "eram", "eras", "erat", "eramus", "eratis", "erant"};
+  std::string endings2[6] = { "eram", "eras", "erat", "eramus", "eratis", "erant"};
+  std::string endings3[6] = { "eram", "eras", "erat", "eramus", "eratis", "erant"};
+  std::string endings4[6] = { "eram", "eras", "erat", "eramus", "eratis", "erant"};
   //push back 
   switch (conjugation)
   {
     case 1:
       {
-        perfectTense.push_back(stem3PP + endings1[0]);
-        perfectTense.push_back(stem3PP + endings1[1]);
-        perfectTense.push_back(stem3PP + endings1[2]);
-        perfectTense.push_back(stem3PP + endings1[3]);
-        perfectTense.push_back(stem3PP + endings1[4]);
-        perfectTense.push_back(stem3PP + endings1[5]);
+        pluperfectTense.push_back(stem3PP + endings1[0]);
+        pluperfectTense.push_back(stem3PP + endings1[1]);
+        pluperfectTense.push_back(stem3PP + endings1[2]);
+        pluperfectTense.push_back(stem3PP + endings1[3]);
+        pluperfectTense.push_back(stem3PP + endings1[4]);
+        pluperfectTense.push_back(stem3PP + endings1[5]);
       }
       break;
     case 2:
       {
-        perfectTense.push_back(stem3PP + endings2[0]);
-        perfectTense.push_back(stem3PP + endings2[1]);
-        perfectTense.push_back(stem3PP + endings2[2]);
-        perfectTense.push_back(stem3PP + endings2[3]);
-        perfectTense.push_back(stem3PP + endings2[4]);
-        perfectTense.push_back(stem3PP + endings2[5]);
+        pluperfectTense.push_back(stem3PP + endings2[0]);
+        pluperfectTense.push_back(stem3PP + endings2[1]);
+        pluperfectTense.push_back(stem3PP + endings2[2]);
+        pluperfectTense.push_back(stem3PP + endings2[3]);
+        pluperfectTense.push_back(stem3PP + endings2[4]);
+        pluperfectTense.push_back(stem3PP + endings2[5]);
       }
       break;
 
     case 3:
       {
-        perfectTense.push_back(stem3PP + endings3[0]);
-        perfectTense.push_back(stem3PP + endings3[1]);
-        perfectTense.push_back(stem3PP + endings3[2]);
-        perfectTense.push_back(stem3PP + endings3[3]);
-        perfectTense.push_back(stem3PP + endings3[4]);
-        perfectTense.push_back(stem3PP + endings3[5]);
+        pluperfectTense.push_back(stem3PP + endings3[0]);
+        pluperfectTense.push_back(stem3PP + endings3[1]);
+        pluperfectTense.push_back(stem3PP + endings3[2]);
+        pluperfectTense.push_back(stem3PP + endings3[3]);
+        pluperfectTense.push_back(stem3PP + endings3[4]);
+        pluperfectTense.push_back(stem3PP + endings3[5]);
       }
       break;
     case 4:
       {
-        perfectTense.push_back(stem3PP + endings4[0]);
-        perfectTense.push_back(stem3PP + endings4[1]);
-        perfectTense.push_back(stem3PP + endings4[2]);
-        perfectTense.push_back(stem3PP + endings4[3]);
-        perfectTense.push_back(stem3PP + endings4[4]);
-        perfectTense.push_back(stem3PP + endings4[5]);
+        pluperfectTense.push_back(stem3PP + endings4[0]);
+        pluperfectTense.push_back(stem3PP + endings4[1]);
+        pluperfectTense.push_back(stem3PP + endings4[2]);
+        pluperfectTense.push_back(stem3PP + endings4[3]);
+        pluperfectTense.push_back(stem3PP + endings4[4]);
+        pluperfectTense.push_back(stem3PP + endings4[5]);
       }
       break;
-      perfectTense.push_back("0");
+      pluperfectTense.push_back("0");
       break;
   }
-}*/
+}
+
+void Verbs::FutureperfectTense()
+{
+
+  std::string endings1[6] = { "ero", "eris", "erit", "erimus", "eritis", "erint"};
+  std::string endings2[6] = { "ero", "eris", "erit", "erimus", "eritis", "erint"};
+  std::string endings3[6] = { "ero", "eris", "erit", "erimus", "eritis", "erint"};
+  std::string endings4[6] = { "ero", "eris", "erit", "erimus", "eritis", "erint"};
+  //push back 
+  switch (conjugation)
+  {
+    case 1:
+      {
+        futureperfectTense.push_back(stem3PP + endings1[0]);
+        futureperfectTense.push_back(stem3PP + endings1[1]);
+        futureperfectTense.push_back(stem3PP + endings1[2]);
+        futureperfectTense.push_back(stem3PP + endings1[3]);
+        futureperfectTense.push_back(stem3PP + endings1[4]);
+        futureperfectTense.push_back(stem3PP + endings1[5]);
+      }
+      break;
+    case 2:
+      {
+        futureperfectTense.push_back(stem3PP + endings2[0]);
+        futureperfectTense.push_back(stem3PP + endings2[1]);
+        futureperfectTense.push_back(stem3PP + endings2[2]);
+        futureperfectTense.push_back(stem3PP + endings2[3]);
+        futureperfectTense.push_back(stem3PP + endings2[4]);
+        futureperfectTense.push_back(stem3PP + endings2[5]);
+      }
+      break;
+
+    case 3:
+      {
+        futureperfectTense.push_back(stem3PP + endings3[0]);
+        futureperfectTense.push_back(stem3PP + endings3[1]);
+        futureperfectTense.push_back(stem3PP + endings3[2]);
+        futureperfectTense.push_back(stem3PP + endings3[3]);
+        futureperfectTense.push_back(stem3PP + endings3[4]);
+        futureperfectTense.push_back(stem3PP + endings3[5]);
+      }
+      break;
+    case 4:
+      {
+        futureperfectTense.push_back(stem3PP + endings4[0]);
+        futureperfectTense.push_back(stem3PP + endings4[1]);
+        futureperfectTense.push_back(stem3PP + endings4[2]);
+        futureperfectTense.push_back(stem3PP + endings4[3]);
+        futureperfectTense.push_back(stem3PP + endings4[4]);
+        futureperfectTense.push_back(stem3PP + endings4[5]);
+      }
+      break;
+      futureperfectTense.push_back("0");
+      break;
+  }
+}
 
 void Verbs::PrintVerbs()
 {
@@ -361,6 +419,14 @@ void Verbs::PrintVerbs()
   }
   std::cout << "\nPerfect Tense is \n";
   for (const auto& element : perfectTense) {
+    std::cout << element << " ";
+  }  
+  std::cout << "\nPluperfect Tense is \n";
+  for (const auto& element : pluperfectTense) {
+    std::cout << element << " ";
+  }
+  std::cout << "\nFuture-Perfect Tense is \n";
+  for (const auto& element : futureperfectTense) {
     std::cout << element << " ";
   }
   std::cout << "\n" << std::endl;

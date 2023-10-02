@@ -13,6 +13,8 @@ int main()
   verb2.PrintVerbs();
   Verbs verb3 = Verbs("Audio", "Audire", "Audivi");
   verb3.PrintVerbs();
+  Verbs verb4 = Verbs("Amo", "Amare", "Amavi");
+  verb4.PrintVerbs();
   std::cin.get();
   return 0;
 

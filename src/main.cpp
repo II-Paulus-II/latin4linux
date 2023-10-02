@@ -11,6 +11,8 @@ int main()
   verb1.PrintVerbs();
   Verbs verb2 = Verbs("Moneo", "Monere");
   verb2.PrintVerbs();
+  Verbs verb3 = Verbs("Audio", "Audire");
+  verb3.PrintVerbs();
   std::cin.get();
   return 0;
 

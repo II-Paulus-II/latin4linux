@@ -27,12 +27,8 @@ Verbs::Verbs(std::string onePP, std::string twoPP)
   //2.Get ends of Princple Parts
   int stemLength = stem.length();
   int firPPlength = firstPP.length();
-  std::string firPPend = firstPP.substr(stemLength, firPPlength);
-  //Test print cos im in basic development go away with your angry stares
-  std::cout << "First Principle Part End is: " << firPPend << std::endl;
-  std::string secPPend = secondPP.substr(stemLength, secPPlength);
-  //test print
-  std::cout << "Second Principle Part End is: " << secPPend << std::endl;
+  firPPend = firstPP.substr(stemLength, firPPlength);
+  secPPend = secondPP.substr(stemLength, secPPlength);
 
   //3. Choose conjugation, regulars only gonna make this better for irregular and -io verbs later
   if (firPPend == "o" && secPPend == "are")
@@ -47,16 +43,78 @@ Verbs::Verbs(std::string onePP, std::string twoPP)
   {
     conjugation = 3;
   }
-  else if (firPPend == "o" && secPPend == "ire")
+  else if (firPPend == "io" && secPPend == "ire")
   {
     conjugation = 4;
   }
 
+  //4. Populate Present Tense Vector
+  PresentTense();
+}
+
+void::Verbs::PresentTense()
+{
+  std::string endings1[6] = { "o", "as", "at", "amus", "atis", "ant"};
+  std::string endings2[6] = { "eo", "es", "et", "emus", "etis", "ent"};
+  std::string endings3[6] = { "o", "is", "it", "imus", "itis", "unt"};
+  std::string endings4[6] = { "io", "is", "it", "imus", "itis", "iunt"};
+  //push back 
+  switch (conjugation)
+  {
+    case 1:
+      {
+        presentTense.push_back(stem + endings1[0]);
+        presentTense.push_back(stem + endings1[1]);
+        presentTense.push_back(stem + endings1[2]);
+        presentTense.push_back(stem + endings1[3]);
+        presentTense.push_back(stem + endings1[4]);
+        presentTense.push_back(stem + endings1[5]);
+      }
+      break;
+    case 2:
+      {
+        presentTense.push_back(stem + endings2[0]);
+        presentTense.push_back(stem + endings2[1]);
+        presentTense.push_back(stem + endings2[2]);
+        presentTense.push_back(stem + endings2[3]);
+        presentTense.push_back(stem + endings2[4]);
+        presentTense.push_back(stem + endings2[5]);
+      }
+      break;
+    case 3:
+      {
+        presentTense.push_back(stem + endings3[0]);
+        presentTense.push_back(stem + endings3[1]);
+        presentTense.push_back(stem + endings3[2]);
+        presentTense.push_back(stem + endings3[3]);
+        presentTense.push_back(stem + endings3[4]);
+        presentTense.push_back(stem + endings3[5]);
+      }
+      break;
+    case 4:
+      {
+        presentTense.push_back(stem + endings4[0]);
+        presentTense.push_back(stem + endings4[1]);
+        presentTense.push_back(stem + endings4[2]);
+        presentTense.push_back(stem + endings4[3]);
+        presentTense.push_back(stem + endings4[4]);
+        presentTense.push_back(stem + endings4[5]);
+      }
+      break;
+    default:
+      presentTense.push_back("0");
+      break;
+  }
 }
 
 void Verbs::PrintVerbs()
 {
-  std::cout << stem << std::endl;
-  std::cout << conjugation << std::endl;
-
+  std::cout << "Principle Parts 1: " << firstPP << " & 2: " << secondPP << "\n";
+  std::cout << "Endings of Principle Parts are 1: " << firPPend << " & 2: " << secPPend << "\n";
+  std::cout << "stem is " << stem << "\n";
+  std::cout << "conjugation is " <<conjugation << "\n";
+  for (const auto& element : presentTense) {
+    std::cout << element << " ";
+  }
+  std::cout << "\n" << std::endl;
 }

@@ -10,7 +10,7 @@ class Verbs
   void PrintVerbs();
   
   private:
-    std::string conjugation;
+    int conjugation;
     std::string firstPP;
     std::string secondPP;
     std::string thirdPP;

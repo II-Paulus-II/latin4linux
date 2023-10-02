@@ -15,7 +15,9 @@ int main()
   verb3.PrintVerbs();
   Verbs verb4 = Verbs("Amo", "Amare", "Amavi");
   verb4.PrintVerbs();
+  std::cout << "Press a key to enter ncurses window" << std::endl;
   std::cin.get();
+  ncursesWINDOW();
   return 0;
 
 }

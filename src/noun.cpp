@@ -71,6 +71,7 @@ Nouns::Nouns(std::string nomC, std::string genC, std::string gend)
     }
 
   }
+  //default: declension = 3; //decline based on detecting the stem and gender
 
 
 }

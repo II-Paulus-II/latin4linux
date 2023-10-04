@@ -15,18 +15,21 @@ int main()
   verb3.PrintVerbs();
   Verbs verb4 = Verbs("Amo", "Amare", "Amavi");
   verb4.PrintVerbs();
-  std::cout << "Press a key to enter ncurses window" << std::endl;
   std::cin.get();
 
   //nouns print
-  //system("clear");
+  
   Nouns noun1 = Nouns("Puer", "Pueri", "masc");
   noun1.Printnouns();
   Nouns noun2 = Nouns("Rosa", "Rosae", "fem");
   noun2.Printnouns();
   Nouns noun3 = Nouns("Magister", "Magistri", "masc");
   noun3.Printnouns();
-  //ncursesWINDOW();
+
+  //ncurses functions 
+
+  std::cout << "Press a key to enter ncurses window" << std::endl;
+  ncursesWINDOW();
   std::cin.get();
   return 0;
 

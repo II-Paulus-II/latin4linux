@@ -43,8 +43,7 @@ void ncursesWINDOW()
         form_driver(my_form, REQ_DEL_CHAR);
         break;
       case KEY_BACKSPACE://NEED TO CHECK NOT IN POSITION 0
-        form_driver(my_form, REQ_LEFT_CHAR);
-        form_driver(my_form, REQ_DEL_CHAR);
+        form_driver(my_form, REQ_DEL_PREV);
         break;
       case KEY_LEFT:
         form_driver(my_form, REQ_LEFT_CHAR);
@@ -75,6 +74,21 @@ void ncursesWINDOW()
 		}
 	}
 
+  form_driver(my_form, REQ_VALIDATION);
+  for (int i = 0; i < 2; i++)
+  {
+    mvprintw(7+i, 20, field_buffer(field[i], 0)); // is this even workable?
+  }
+  
+  std::string myteststring = field_buffer(field[0], 0);
+
+  char *mystring = field_buffer(field[0], 0);
+  char *mysecondstr = field_buffer(field[1], 0);
+  mvprintw(11, 20, "my test");
+  mvprintw(12, 20, myteststring.c_str());
+  //mvprintw(13, 20, mysecondstr);
+
+  getch();
 	/* Un post form and free the memory */
 	unpost_form(my_form);
 	free_form(my_form);

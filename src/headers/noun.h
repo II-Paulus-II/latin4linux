@@ -5,10 +5,10 @@ class Nouns
 {
   public:
     Nouns();
-    Nouns(std::string nomC, std::string genC, std::string gender);
+    Nouns(std::string nomC, std::string genC, std::string gend);
     void Printnouns();
   private:
-    std::string declension;
+    int declension;
     std::string gender;
     std::string nomCase;
     std::string vocCase;

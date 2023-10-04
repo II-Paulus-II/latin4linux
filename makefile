@@ -2,12 +2,13 @@ CC = g++
 LIB = -lncurses -lform
 
 VH = src/headers/verbs.h
+NH = src/headers/noun.h
 WH = src/headers/window.h
 MH = src/headers/mainheader.h
 
 all: latin
 
-latin: obj/main.o obj/verbs.o obj/window.o
+latin: obj/main.o obj/verbs.o obj/noun.o obj/window.o
 	${CC} $^ -o $@ ${LIB}
 
 obj/main.o: src/main.cpp ${MH} ${WH} ${VH}
@@ -15,6 +16,9 @@ obj/main.o: src/main.cpp ${MH} ${WH} ${VH}
 
 obj/verbs.o: src/verbs.cpp ${VH}
 	${CC} -c -Wall src/verbs.cpp -o $@
+
+obj/noun.o: src/noun.cpp ${NH}
+	${CC} -c -Wall src/noun.cpp -o $@
 
 obj/window.o: src/window.cpp ${WH}
 	${CC} -c -Wall src/window.cpp -o $@

@@ -16,5 +16,18 @@ class Nouns
     std::string genCase;
     std::string datCase;
     std::string ablCase;
+    std::string nompluCase;
+    std::string vocpluCase;
+    std::string accpluCase;
+    std::string genpluCase;
+    std::string datpluCase;
+    std::string ablpluCase;
+
+    //private methods
+    void Declinefirst();
+    void Declinesecond();
+    void Declinethird();
+    void Declinefourth();
+    void Declinefifth();
 };
 

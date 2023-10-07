@@ -24,6 +24,7 @@ class Nouns
     std::string ablpluCase;
 
     //private methods
+    bool Voweltest(std::string s);
     void Declinefirst();
     void Declinesecond();
     void Declinethird();

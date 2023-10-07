@@ -25,6 +25,7 @@ Nouns::Nouns(std::string nomC, std::string genC, std::string gend)
   signed int difference = nomcaseLen - gencaseLen;
 
   std::string nomcaseEnd = nomCase.substr(nomcaseLen-1, 1);
+  //std::cout << nomcaseEnd << " test print 1 in constructor" << std::endl;
   std::string gencaseEnd = genCase.substr(gencaseLen -1,1);
 
   std::string nomcase2End = nomCase.substr(nomcaseLen-2, 2);
@@ -32,6 +33,30 @@ Nouns::Nouns(std::string nomC, std::string genC, std::string gend)
 
   switch (difference)
   {
+    case -2:
+      {
+      if ((gender == "n") && ((nomcase2End == "ar") || (nomcase2End == "al")))
+        {
+          declension = 33; //neuter -ar/al exemplar/exemplaris animal/animalis
+          Declinethird();  
+        }
+      else if (((nomcaseEnd == "x") || (nomcaseEnd == "s")) && (gencase2End == "is"))
+        {
+          std::string gencaseCtest = genCase.substr(gencaseLen-4, 2); // Test for 2 consonants
+          //std::cout << gencaseCtest << "dubug string" << std::endl;
+          bool Vowelfound = Voweltest(gencaseCtest);
+          if (Vowelfound)
+            {
+              declension = 31; //rex regis
+            }
+          else 
+            {
+              declension = 37; //ars artis
+            }
+          Declinethird();
+        }
+      }
+      break;
     case -1:
       {
       if ((gencase2End == "ae") && (nomcaseEnd == "a"))
@@ -53,6 +78,26 @@ Nouns::Nouns(std::string nomC, std::string genC, std::string gend)
         {
           declension = 43; //4th declension type hero/herus
         }
+      else if ((gender == "n") && (nomcaseEnd == "e"))
+        {
+          declension = 32;
+          Declinethird();
+        }
+      else if (((nomcaseEnd == "x") || (nomcaseEnd == "s")) && (gencase2End == "is"))
+        {
+          std::string gencaseCtest = genCase.substr(gencaseLen-4, 2); // Test for 2 consonants
+          //std::cout << gencaseCtest << "dubug string" << std::endl;
+          bool Vowelfound = Voweltest(gencaseCtest);
+          if (Vowelfound)
+            {
+              declension = 38; //rex regis family but may be no members
+            }
+          else 
+            {
+              declension = 39; // urbs/urbis
+            }
+          Declinethird();
+        }
       }
       break;
     case 0:
@@ -72,6 +117,16 @@ Nouns::Nouns(std::string nomC, std::string genC, std::string gend)
           declension = 5; // type dies/diei 
           Declinefifth();
         }
+      else if ((gencase2End == "is") && (nomcase2End == "is"))
+        {
+          declension = 34; // case civis/civis
+          Declinethird();
+        }
+      else if ((gencase2End == "is") && (nomcase2End == "es"))
+        {
+          declension = 35; //case nubes/nubis
+          Declinethird();
+        }
       }
       break;
     case 1:
@@ -89,11 +144,54 @@ Nouns::Nouns(std::string nomC, std::string genC, std::string gend)
       }
       break;
     default:
-      {
-        Declinethird();
+      {        
       }
       break;
   }
+}
+
+bool Nouns::Voweltest(std::string s)
+{
+  bool Vowelfound = false;
+
+  std::string a = "a";
+  std::string e = "e";
+  std::string i = "i";
+  std::string o = "o";
+  std::string u = "u";
+
+  std::size_t foundA = s.find(a);
+  std::size_t foundE = s.find(e);
+  std::size_t foundI = s.find(i);
+  std::size_t foundO = s.find(o);
+  std::size_t foundU = s.find(u);
+
+  if (foundA != std::string::npos)
+  {
+    Vowelfound = true;
+  }
+    
+  if (foundE != std::string::npos)
+  {
+    Vowelfound = true;
+  }
+
+  if (foundI != std::string::npos)
+  {
+    Vowelfound = true;
+  }
+
+  if (foundO != std::string::npos)
+  {
+    Vowelfound = true;
+  }
+
+  if (foundU != std::string::npos)
+  {
+    Vowelfound = true;
+  }
+
+  return Vowelfound;
 }
 
 void Nouns::Declinefirst()
@@ -195,8 +293,85 @@ void Nouns::Declinesecond()
 
 void Nouns::Declinethird()
 {
-  std::cout << "third declension is complex AAA" << std::endl;
-  declension = 3; //for nows
+  //std::cout << "third declension is complex AAA" << std::endl;
+  switch (declension) 
+  {
+    case 32: //neuter /e mare/maris
+      {
+        std::string EndingsSg[6] = { "e", "e", "e", "is", "i", "i"};
+        std::string EndingsPl[6] = { "ia", "ia", "ia", "ium", "ibus", "ibus"};
+        int stemLen = nomCase.length() -1;
+        std::string stem = nomCase.substr(0, stemLen);
+        vocCase = stem + EndingsSg[1];
+        accCase = stem + EndingsSg[2];
+        datCase = stem + EndingsSg[4];
+        ablCase = stem + EndingsSg[5];
+        nompluCase = stem + EndingsPl[0];
+        vocpluCase = stem + EndingsPl[1];
+        accpluCase = stem + EndingsPl[2];
+        genpluCase = stem + EndingsPl[3];
+        datpluCase = stem + EndingsPl[4];
+        ablpluCase = stem + EndingsPl[5];
+      }
+      break;
+    case 33: // case animal/animalis exemplar/exemplaris
+      {
+        std::string EndingsSg[6] = { "", "", "", "is", "i", "i"};
+        std::string EndingsPl[6] = { "ia", "ia", "ia", "ium", "ibus", "ibus"};
+        int stemLen = nomCase.length();
+        std::string stem = nomCase.substr(0, stemLen);
+        vocCase = stem + EndingsSg[1];
+        accCase = stem + EndingsSg[2];
+        datCase = stem + EndingsSg[4];
+        ablCase = stem + EndingsSg[5];
+        nompluCase = stem + EndingsPl[0];
+        vocpluCase = stem + EndingsPl[1];
+        accpluCase = stem + EndingsPl[2];
+        genpluCase = stem + EndingsPl[3];
+        datpluCase = stem + EndingsPl[4];
+        ablpluCase = stem + EndingsPl[5];
+      }
+      break;
+    case 34: //case civis/civis
+      {
+        std::string EndingsSg[6] = { "is", "is", "em", "is", "i", "e"};
+        std::string EndingsPl[6] = { "es", "es", "es", "ium", "ibus", "ibus"};
+        int stemLen = nomCase.length() -2;
+        std::string stem = nomCase.substr(0, stemLen);
+        vocCase = stem + EndingsSg[1];
+        accCase = stem + EndingsSg[2];
+        datCase = stem + EndingsSg[4];
+        ablCase = stem + EndingsSg[5];
+        nompluCase = stem + EndingsPl[0];
+        vocpluCase = stem + EndingsPl[1];
+        accpluCase = stem + EndingsPl[2];
+        genpluCase = stem + EndingsPl[3];
+        datpluCase = stem + EndingsPl[4];
+        ablpluCase = stem + EndingsPl[5];
+      }
+      break;
+    case 35: //case nubes/nubis
+      {
+        std::string EndingsSg[6] = { "es", "es", "em", "is", "i", "e"};
+        std::string EndingsPl[6] = { "es", "es", "es", "ium", "ibus", "ibus"};
+        int stemLen = nomCase.length() -2;
+        std::string stem = nomCase.substr(0, stemLen);
+        vocCase = stem + EndingsSg[1];
+        accCase = stem + EndingsSg[2];
+        datCase = stem + EndingsSg[4];
+        ablCase = stem + EndingsSg[5];
+        nompluCase = stem + EndingsPl[0];
+        vocpluCase = stem + EndingsPl[1];
+        accpluCase = stem + EndingsPl[2];
+        genpluCase = stem + EndingsPl[3];
+        datpluCase = stem + EndingsPl[4];
+        ablpluCase = stem + EndingsPl[5];
+      }
+      break;
+    default:
+      
+      break;
+  }
 }
 
 void Nouns::Declinefourth()

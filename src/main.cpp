@@ -18,14 +18,14 @@ int main()
 
   //nouns print
   
-  Nouns noun1 = Nouns("Gradus", "Gradus", "fem");
+  Nouns noun1 = Nouns("Ars", "Artis", "Fem");
   noun1.Printnouns();
-  //Nouns noun2 = Nouns("Oculus", "Oculi", "fem");
-  //noun2.Printnouns();
-  Nouns noun3 = Nouns("Genu", "Genus", "masc");
-  noun3.Printnouns();
-  Nouns noun4 = Nouns("Regnum", "Regni", "fem");
-  noun4.Printnouns();
+  Nouns noun2 = Nouns("Rex", "Regis", "f");
+  noun2.Printnouns();
+  //Nouns noun3 = Nouns("Exemplar", "Exemplaris", "n");
+  //noun3.Printnouns();
+  //Nouns noun4 = Nouns("Regnum", "Regni", "fem");
+  //noun4.Printnouns();
   //ncurses functions 
   //std::cout << "Press a key to enter ncurses window" << std::endl;
   std::cin.get();

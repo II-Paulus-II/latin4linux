@@ -117,7 +117,7 @@ Nouns::Nouns(std::string nomC, std::string genC, std::string gend)
           declension = 5; // type dies/diei 
           Declinefifth();
         }
-      /*else if ((gencase2End == "is") && (nomcase2End == "is"))
+      else if ((gencase2End == "is") && (nomcase2End == "is"))
         {
           declension = 34; // case civis/civis
           Declinethird();
@@ -126,7 +126,7 @@ Nouns::Nouns(std::string nomC, std::string genC, std::string gend)
         {
           declension = 35; //case nubes/nubis
           Declinethird();
-        }*/ //These NOUNS need 4 arg constructor
+        } //These NOUNS need 4 arg constructor
       }
       break;
     case 1:
@@ -345,7 +345,7 @@ void Nouns::Declinethird()
         nompluCase = stem + EndingsPl[0];
         vocpluCase = stem + EndingsPl[1];
         accpluCase = stem + EndingsPl[2];
-        genpluCase = stem + EndingsPl[3];
+        genpluCase = "incomplete data"; //stem + EndingsPl[3];
         datpluCase = stem + EndingsPl[4];
         ablpluCase = stem + EndingsPl[5];
       }
@@ -363,7 +363,7 @@ void Nouns::Declinethird()
         nompluCase = stem + EndingsPl[0];
         vocpluCase = stem + EndingsPl[1];
         accpluCase = stem + EndingsPl[2];
-        genpluCase = stem + EndingsPl[3];
+        genpluCase = "incomplete data"; //stem + EndingsPl[3];
         datpluCase = stem + EndingsPl[4];
         ablpluCase = stem + EndingsPl[5];
       }

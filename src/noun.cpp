@@ -117,7 +117,7 @@ Nouns::Nouns(std::string nomC, std::string genC, std::string gend)
           declension = 5; // type dies/diei 
           Declinefifth();
         }
-      else if ((gencase2End == "is") && (nomcase2End == "is"))
+      /*else if ((gencase2End == "is") && (nomcase2End == "is"))
         {
           declension = 34; // case civis/civis
           Declinethird();
@@ -126,7 +126,7 @@ Nouns::Nouns(std::string nomC, std::string genC, std::string gend)
         {
           declension = 35; //case nubes/nubis
           Declinethird();
-        }
+        }*/ //These NOUNS need 4 arg constructor
       }
       break;
     case 1:

@@ -5,7 +5,7 @@
 int main()
 {
   //lets see first
-  /*Verbs verb = Verbs("Laudo", "Laudare", "Laudavi");
+  Verbs verb = Verbs("Laudo", "Laudare", "Laudavi");
   verb.PrintVerbs();
   Verbs verb1 = Verbs("Rego", "Regere", "Rexi");
   verb1.PrintVerbs();
@@ -14,14 +14,14 @@ int main()
   Verbs verb3 = Verbs("Audio", "Audire", "Audivi");
   verb3.PrintVerbs();
   Verbs verb4 = Verbs("Amo", "Amare", "Amavi");
-  verb4.PrintVerbs();*/
+  verb4.PrintVerbs();
 
   //nouns print
   
-  Nouns noun1 = Nouns("Ars", "Artis", "Fem");
-  noun1.Printnouns();
-  Nouns noun2 = Nouns("Rex", "Regis", "f");
-  noun2.Printnouns();
+  //Nouns noun1 = Nouns("Ars", "Artis", "Fem");
+  //noun1.Printnouns();
+  //Nouns noun2 = Nouns("Civis", "Civis", "m");
+  //noun2.Printnouns();
   //Nouns noun3 = Nouns("Exemplar", "Exemplaris", "n");
   //noun3.Printnouns();
   //Nouns noun4 = Nouns("Regnum", "Regni", "fem");
@@ -29,8 +29,8 @@ int main()
   //ncurses functions 
   //std::cout << "Press a key to enter ncurses window" << std::endl;
   std::cin.get();
-  //ncursesWINDOW();
-  //std::cin.get();
+  ncursesWINDOW();
+  std::cin.get();
   return 0;
 
 }

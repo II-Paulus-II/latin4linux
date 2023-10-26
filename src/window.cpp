@@ -1,7 +1,12 @@
 #include "headers/window.h"
+#include <locale.h>
+
+#define _XOPEN_SOURCE_EXTENDED 1
+#define ctrl(x) (x & 0x1F)
 
 void ncursesWINDOW()
 {
+  setlocale(LC_ALL, "");
   FIELD *field[3];
 	FORM  *my_form;
 	int ch;
@@ -29,6 +34,8 @@ void ncursesWINDOW()
 	post_form(my_form);
 	refresh();
 	
+  mvprintw(1, 1, "LaudÚ" );
+
 	mvprintw(4, 10, "Value 1:");
 	mvprintw(6, 10, "Value 2:");
   form_driver(my_form, REQ_FIRST_FIELD);
@@ -38,7 +45,7 @@ void ncursesWINDOW()
 	while((ch = getch()) != KEY_F(1))//F1 KEY LOL
 	{	
     switch(ch)
-		{	
+		{
       case KEY_DC:
         form_driver(my_form, REQ_DEL_CHAR);
         break;
@@ -69,7 +76,16 @@ void ncursesWINDOW()
 			default:
 				/* If this is a normal character, it gets */
 				/* Printed				  */	
-				form_driver(my_form, ch);
+        if (ch == ctrl('a'))
+        {
+          /*FIELD *mycurrentfield = current_field(my_form);
+          int my_index = field_index(mycurrentfield);   
+          set_field_buffer(mycurrentfield, my_index, "\u00B0");*/
+          form_driver_w(my_form, OK, '\u00E1');
+        }
+        else {
+				  form_driver(my_form, ch);
+        }
 				break;
 		}
 	}

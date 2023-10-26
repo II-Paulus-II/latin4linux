@@ -1,5 +1,5 @@
 CC = g++
-LIB = -lncurses -lform
+LIB = -lncursesw -lformw
 
 VH = src/headers/verbs.h
 NH = src/headers/noun.h

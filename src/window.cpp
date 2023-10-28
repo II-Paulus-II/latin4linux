@@ -70,18 +70,28 @@ void ncursesWINDOW()
 				form_driver(my_form, REQ_PREV_FIELD);
 				form_driver(my_form, REQ_END_LINE);
 				break;
-      case 9://omegalol tbh
-        form_driver(my_form, REQ_NEXT_FIELD);
-        break;
 			default:
 				/* If this is a normal character, it gets */
 				/* Printed				  */	
         if (ch == ctrl('a'))
         {
-          /*FIELD *mycurrentfield = current_field(my_form);
-          int my_index = field_index(mycurrentfield);   
-          set_field_buffer(mycurrentfield, my_index, "\u00B0");*/
-          form_driver_w(my_form, OK, '\u00E1');
+          form_driver_w(my_form, OK, L'\u00E1');
+        }
+        else if (ch == ctrl('e'))
+        {
+          form_driver_w(my_form, OK, L'\u00E9');
+        }
+        else if (ch == ctrl('i'))
+        {
+          form_driver_w(my_form, OK, L'\u00ED');
+        }
+        else if (ch == ctrl('o'))
+        {
+          form_driver_w(my_form, OK, L'\u00F3');
+        }
+        else if (ch == ctrl('u'))
+        {
+          form_driver_w(my_form, OK, L'\u00FA');
         }
         else {
 				  form_driver(my_form, ch);

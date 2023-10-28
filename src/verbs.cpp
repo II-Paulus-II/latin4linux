@@ -463,8 +463,8 @@ void Verbs::PrintVerbs()
   std::cout << "stem is " << stem << "\n";
   std::cout << "conjugation is " <<conjugation << "\n";
   std::cout << "Present Tense is \n";
-  for (const auto& element : presentTense) {
-    std::cout << element << " ";
+  for (size_t i=0; i < presentTense.size(); i++) {
+    std::cout << presentTense[i] << " ";
   }
   std::cout << "\nFuture Tense is \n";
   for (const auto& element : futureTense) {

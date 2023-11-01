@@ -26,8 +26,8 @@ int main()
   //noun3.Printnouns();
   //Nouns noun4 = Nouns("Regnum", "Regni", "fem");
   //noun4.Printnouns();
-  //ncurses functions 
-  //std::cout << "Press a key to enter ncurses window" << std::endl;
+  ncurses functions 
+  std::cout << "Test fields" << std::endl;
   std::cin.get();
   ncursesWINDOW();
   std::cin.get();

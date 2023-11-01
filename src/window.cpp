@@ -4,9 +4,12 @@
 #define _XOPEN_SOURCE_EXTENDED 1
 #define ctrl(x) (x & 0x1F)
 
+/*Test use of Form.h from Ncurses, to build form driver and 
+ *test interaction with forms.h and std::string*/ 
+
 void ncursesWINDOW()
 {
-  setlocale(LC_ALL, "");
+  setlocale(LC_ALL, ""); //Enable use of unicode 
   FIELD *field[3];
 	FORM  *my_form;
 	int ch;
@@ -15,7 +18,7 @@ void ncursesWINDOW()
 	initscr();
 	cbreak();
 	noecho();
-	keypad(stdscr, TRUE);
+	keypad(stdscr, TRUE); //Don't forget to change this to use window when fields have uniq windo. 
 
 	/* Initialize the fields */
 	field[0] = new_field(1, 10, 4, 18, 0, 0);
@@ -34,7 +37,7 @@ void ncursesWINDOW()
 	post_form(my_form);
 	refresh();
 	
-  mvprintw(1, 1, "LaudÚ" );
+  mvprintw(1, 1, "LaudÚ" ); //Test print of Unicode character
 
 	mvprintw(4, 10, "Value 1:");
 	mvprintw(6, 10, "Value 2:");
@@ -42,7 +45,7 @@ void ncursesWINDOW()
 	refresh();
 
 	/* Loop through to get user requests */
-	while((ch = getch()) != KEY_F(1))//F1 KEY LOL
+	while((ch = getch()) != KEY_F(1))//F1 KEY -
 	{	
     switch(ch)
 		{

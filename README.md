@@ -4,7 +4,10 @@ Latin Grammar is weird when you first encounter it. Certain english words are mi
 
 In English, we might say, "I love" & "you love", but latin will say "amo" & "amas", so the endings determine who is doing the loving. Similarly with nouns the ending determines who is doing what to whom.
 
-e.g. Regina(queen) regem(king) amat(he/she/it loves) - means - the queen. loves the king Regem amat Regina - means - the queen loves the king. Reginam(queen) rex(king) amat(he/she/it loves) - means - the king loves the queen.
+e.g. 
+Regina(queen) regem(king) amat(he/she/it loves) - means - the queen loves the king. 
+Regem amat Regina - means - the queen loves the king. 
+Reginam(queen) rex(king) amat(he/she/it loves) - means - the king loves the queen.
 
 As the above example shows, word order is also less important - its the ending that determines the meaning. Hence a grammar practice app where one practices the various endings of words is a good idea at least initially when one wants to learn some latin.
 
@@ -31,9 +34,9 @@ Need constructor with an extra argument to deal with genitive plural case from 3
 
 #### Verbs
 
-Abstract conjugation identifier from constructor
-Make constructor for 3 Principle part verb entry and 4 Principle part entry
-Don't let anyone see you didn't implement a for loop in conjugation functions instead of repeating yourself 
+Abstract conjugation identifier from constructor.
+
+Don't let anyone see you didn't implement a for loop in conjugation/declining functions instead of repeating yourself 
 
 
 

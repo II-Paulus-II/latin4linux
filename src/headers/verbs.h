@@ -1,3 +1,6 @@
+/* Some verbs only have three principle parts despite being regular verbs
+ * So need constructors for verbs with 3 and 4 principle parts */
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -6,7 +9,8 @@ class Verbs
 {
   public:
   Verbs();
-  Verbs(std::string onePP, std::string twoPP, std::string threePP); //for now
+  Verbs(std::string onePP, std::string twoPP, std::string threePP); 
+  Verbs(std::string onePP, std::string twoPP, std::string threePP, std::string fourPP);
   void PrintVerbs();
   
   private:
@@ -28,6 +32,7 @@ class Verbs
     std::vector<std::string> presentpassiveTense;
 
     //Private Methods
+    void SelectConjugation();
     void PresentTense();
     void FutureTense();
     void ImperfectTense();

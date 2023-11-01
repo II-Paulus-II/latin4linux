@@ -222,10 +222,10 @@ void Nouns::Declinesecond()
         std::string EndingsPl[6] = { "i", "i", "os", "orum", "is", "is"};
         int stemLen = nomCase.length() -2;
         std::string stem = nomCase.substr(0, stemLen);
-        vocCase = stem + EndingsSg[1];
-        accCase = stem + EndingsSg[2];
-        datCase = stem + EndingsSg[4];
-        ablCase = stem + EndingsSg[5];
+        vocCase = stem + EndingsSg[1]; //Ocule
+        accCase = stem + EndingsSg[2]; //Oculum
+        datCase = stem + EndingsSg[4]; //Oculo
+        ablCase = stem + EndingsSg[5]; //Oculi
         nompluCase = stem + EndingsPl[0];
         vocpluCase = stem + EndingsPl[1];
         accpluCase = stem + EndingsPl[2];

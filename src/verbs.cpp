@@ -8,10 +8,6 @@ Verbs::Verbs()
   secondPP = "0";
   thirdPP = "0";
   fourthPP = "0";
-  presentTense.push_back("0");
-  futureTense.push_back("0");
-  imperfectTense.push_back("0");
-  perfectTense.push_back("0");
 }
 
 Verbs::Verbs(std::string onePP, std::string twoPP, std::string threePP)
@@ -22,12 +18,48 @@ Verbs::Verbs(std::string onePP, std::string twoPP, std::string threePP)
   thirdPP = threePP;
   fourthPP = "0";
 
-  //Identify the conjugation
+  //Select Conjugation
+  
+  SelectConjugation();
+
+  //Populate Tenses Vectors
+  PresentTense();
+  FutureTense();
+  ImperfectTense();
+  PerfectTense();
+  PluperfectTense();
+  FutureperfectTense();
+  PresentpassiveTense();
+}
+
+Verbs::Verbs(std::string onePP, std::string twoPP, std::string threePP, std::string fourPP)
+{
+  //Set principle parts
+  firstPP = onePP;
+  secondPP = twoPP;
+  thirdPP = threePP;
+  fourthPP = fourPP;
+
+  //Select Conjugation
+  
+  SelectConjugation();
+
+  //Populate Tenses Vectors - verbs with 4 principle parts will have more tenses. 
+  PresentTense();
+  FutureTense();
+  ImperfectTense();
+  PerfectTense();
+  PluperfectTense();
+  FutureperfectTense();
+}
+
+void Verbs::SelectConjugation()
+{
   //1. get stem
   int secPPlength = secondPP.length();
-  stem = secondPP.substr(0, secPPlength-3);
+  stem = secondPP.substr(0, secPPlength-3); //dropping the "are"/"ere"
   int thirdPPlength = thirdPP.length();
-  stem3PP = thirdPP.substr(0, thirdPPlength-1); //Dropping the i
+  stem3PP = thirdPP.substr(0, thirdPPlength-1); //Dropping the "i"
   
   //2.Get ends of Princple Parts
   int stemLength = stem.length();
@@ -52,18 +84,9 @@ Verbs::Verbs(std::string onePP, std::string twoPP, std::string threePP)
   {
     conjugation = 4;
   }
-
-  //4. Populate Tenses Vectors
-  PresentTense();
-  FutureTense();
-  ImperfectTense();
-  PerfectTense();
-  PluperfectTense();
-  FutureperfectTense();
-  PresentpassiveTense();
 }
 
-void::Verbs::PresentTense()
+void Verbs::PresentTense()
 {
   std::string endings1[6] = { "o", "as", "at", "amus", "atis", "ant"};
   std::string endings2[6] = { "eo", "es", "et", "emus", "etis", "ent"};

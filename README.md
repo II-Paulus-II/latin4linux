@@ -38,5 +38,6 @@ Abstract conjugation identifier from constructor.
 
 Don't let anyone see you didn't implement a for loop in conjugation/declining functions instead of repeating yourself 
 
-
+#### Words 
+Create Words Class and then make verbs and noun constructors private. 
 

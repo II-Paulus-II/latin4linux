@@ -1,4 +1,4 @@
-#include "headers/verbs.h"
+#include "../include/verbs.h"
 
 //NULL Constructor probably unnecessary but just in case I make one with no arguments somewhere
 Verbs::Verbs()

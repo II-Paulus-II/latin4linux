@@ -1,5 +1,4 @@
-#include "headers/window.h"
-#include <locale.h>
+#include "../include/window.h"
 
 #define _XOPEN_SOURCE_EXTENDED 1
 #define ctrl(x) (x & 0x1F)

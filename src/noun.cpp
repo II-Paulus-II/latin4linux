@@ -1,4 +1,4 @@
-#include "headers/noun.h"
+#include "../include/noun.h"
 
 Nouns::Nouns()
 {
